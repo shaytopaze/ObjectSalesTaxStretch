@@ -26,15 +26,17 @@ var companySalesData = [
 function sum(arrayToBeSummed) {
   var total = arrayToBeSummed.reduce(function (a, b) {
     return a + b;
-  }, 0)
-return total;
+  }, 0);
+  return total;
 }
 
 function calculateSalesTax(salesData, taxRates) {
   var total = [];
-  for (var index in companySalesData) { // Loop through objects in CompanySalesData Array
-  var company = companySalesData[index];
-  var totalSales = sum(company.sales); // Output the added elements of sales ---> Use sum() function to get total sales
+  // Loop through objects in CompanySalesData Array
+  for (var index in companySalesData) {
+    var company = companySalesData[index];
+    // Output the added elements of sales ---> Use sum() function to get total sales
+    var totalSales = sum(company.sales);
     // console.log(totalSales);
     total.push(totalSales * salesTaxRates[company.province]);
   }
